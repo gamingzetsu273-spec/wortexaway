@@ -30,7 +30,6 @@ async def start_spam(message: types.Message):
         try:
             while True:
                 await bot.send_message(chat_id=chat_id, text=SPAM_TEXT)
-                # Soniyasiga 5 ta xabar (1 / 5 = 0.2 sekund)
                 await asyncio.sleep(0.2)
         except asyncio.CancelledError:
             pass
