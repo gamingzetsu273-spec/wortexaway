@@ -24,12 +24,13 @@ async def start_spam(message: types.Message):
         await message.answer("Spam allaqachon ishlamoqda!")
         return
 
-    await message.answer("Spam boshlandi...")
+    await message.answer("🚀 Spam boshlandi...")
 
     async def send_messages():
         try:
             while True:
                 await bot.send_message(chat_id=chat_id, text=SPAM_TEXT)
+                # Soniyasiga 5 ta xabar (1 / 5 = 0.2 sekund)
                 await asyncio.sleep(0.2)
         except asyncio.CancelledError:
             pass
@@ -46,7 +47,7 @@ async def stop_spam(message: types.Message):
     chat_id = message.chat.id
     if chat_id in spam_tasks and not spam_tasks[chat_id].done():
         spam_tasks[chat_id].cancel()
-        await message.answer("Spam to'xtatildi!")
+        await message.answer("🛑 Spam to'xtatildi!")
     else:
         await message.answer("Hozirda faol spam yo'q.")
 
@@ -56,4 +57,3 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())
-    
