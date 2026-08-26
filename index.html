@@ -654,9 +654,6 @@
             .amallar {
                 gap: 10px;
             }
-            .amallar .hisob {
-                display: none;
-            }
             .hero {
                 min-height: 650px;
             }
@@ -720,7 +717,7 @@
         <button class="qidiruv-btn" onclick="qidiruvniOch()">Qidirish</button>
         <div class="amallar">
             <button onclick="qidiruvniOch()">🔍</button>
-            <button class="hisob">Hisob</button>
+            <button class="hisob" onclick="hisobgaOt()">Hisob</button>
             <button onclick="savatniKor()">Savat <span id="savatSoni">(0)</span></button>
         </div>
     </div>
@@ -1039,6 +1036,11 @@ function qidiruvniYop(event) {
     if (event.target.id === "qidiruvOyna") {
         document.getElementById("qidiruvOyna").classList.remove("ochiq");
     }
+}
+
+// HISOB TUGMASI BOSILGANDA hisob.html SAHIFASIGA O'TISH
+function hisobgaOt() {
+    window.location.href = "hisob.html";
 }
 
 function qidir(matn) {
